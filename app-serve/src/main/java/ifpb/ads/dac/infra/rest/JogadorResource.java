@@ -31,7 +31,6 @@ public class JogadorResource {
     private ServiceJogador service;
 
     @GET
-//    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response recuperarTodos() {
         List<Jogador> jogadores = service.jogadores();
 
@@ -82,4 +81,5 @@ public class JogadorResource {
                 .entity(jogador)
                 .build();
     }
+
 }

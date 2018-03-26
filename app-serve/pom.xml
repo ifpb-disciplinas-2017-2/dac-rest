@@ -39,6 +39,7 @@
     </dependencies>
 
     <build>
+        <finalName>dac-jogador</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

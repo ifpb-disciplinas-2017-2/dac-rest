@@ -37,9 +37,6 @@ public class ServiceJogador {
     public void merge(int id, Jogador jogador) {
         jogador.setId(id);
         em.merge(jogador);
-        
-//        Jogador find = em.find(Jogador.class, id);
-//        jogador.
     }
 
 }
