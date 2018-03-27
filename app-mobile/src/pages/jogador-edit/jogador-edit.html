@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Cadastro
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" name="nome" [(ngModel)]="jogador.nome"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Foto</ion-label>
+          <ion-input type="text" name="foto" [(ngModel)]="jogador.foto"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+          <ion-label stacked>Codigo</ion-label>
+          <ion-input type="text" name="codigo" [(ngModel)]="jogador.id"></ion-input>
+      </ion-item> -->
+    </ion-list>
+  
+    <button ion-button block (click)="salvar()" color="primary">Salvar</button>
+  
+  </ion-content>

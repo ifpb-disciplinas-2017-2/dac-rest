@@ -93,4 +93,14 @@ public class PartidaResource {
                 .entity(partida)
                 .build();
     }
+    @PUT
+    @Path("{id}/finalizar")
+    public Response finalizar(@PathParam("id") int id) {
+
+        Partida partida = this.service.finalizar(id);
+
+        return Response.ok()
+                .entity(partida)
+                .build();
+    }
 }

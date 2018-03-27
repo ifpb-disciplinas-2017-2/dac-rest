@@ -2,6 +2,7 @@ package ifpb.ads.dac.service;
 
 import ifpb.ads.dac.domain.Jogador;
 import ifpb.ads.dac.domain.Partida;
+import ifpb.ads.dac.domain.Status;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -48,6 +49,13 @@ public class ServicePartida {
         Partida merge = em.merge(partida);
         return merge;
 
+    }
+
+    public Partida finalizar(int id) {
+        Partida partida = em.find(Partida.class, id);
+        partida.setStatus(Status.FINALIZADA);
+        Partida merge = em.merge(partida);
+        return merge;
     }
 
 }

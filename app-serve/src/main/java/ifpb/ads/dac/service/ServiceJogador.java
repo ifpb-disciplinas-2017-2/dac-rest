@@ -29,9 +29,10 @@ public class ServiceJogador {
         return em.find(Jogador.class, id);
     }
 
-    public void remover(int id) {
+    public Jogador remover(int id) {
         Jogador find = em.find(Jogador.class, id);
         em.remove(find);
+        return find;
     }
 
     public void merge(int id, Jogador jogador) {

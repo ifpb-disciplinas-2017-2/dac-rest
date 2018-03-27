@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item-sliding *ngFor="let jogador of jogadores">
+        <ion-item class="jogador" (click)="irParaJogador(jogador.id)">
+        <!-- <ion-item class="jogador" (click)="irParaJogador(jogador)" *ngFor="let jogador of jogadores"> -->
+        <!-- <ion-item class="jogador" *ngFor="let jogador of jogadores"> -->
+          <ion-avatar item-left >  
+            <img src="{{jogador.foto}}">
+          </ion-avatar> 
+          <h2>{{jogador.nome}}</h2>
+        </ion-item>
+        <ion-item-options side="left">
+          <button ion-button color="primary" (click)="editarJogador(jogador)">
+            <ion-icon name="create"></ion-icon>
+            editar
+          </button> 
+          <button ion-button color="danger" (click)="remover(jogador)">
+              <ion-icon name="trash"></ion-icon>
+              excluir
+            </button>
+        </ion-item-options> 
+      </ion-item-sliding>
+    </ion-list>
+    <ion-fab bottom right>
+        <button ion-fab color="secondary" (click)="novoJogador()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
+</ion-content>

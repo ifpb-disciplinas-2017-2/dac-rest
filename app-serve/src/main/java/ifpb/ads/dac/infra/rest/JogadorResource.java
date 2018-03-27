@@ -39,6 +39,7 @@ public class JogadorResource {
         };
 
         return Response.ok()
+//                .header("Access-Control-Allow-Origin", "*")
                 .entity(entity)
                 .build();
     }
@@ -49,6 +50,7 @@ public class JogadorResource {
     public Response recuperarJogador(@PathParam("id") int id) {
         Jogador jogador = service.jogador(id);
         return Response.ok()
+//                .header("Access-Control-Allow-Origin", "*")
                 .entity(jogador)
                 .build();
     }
@@ -57,8 +59,11 @@ public class JogadorResource {
     @DELETE
     @Path("{id}")
     public Response removerJogador(@PathParam("id") int id) {
-        service.remover(id);
+        Jogador jogador = service.remover(id);
         return Response.ok() // 200
+//                .header("Access-Control-Allow-Origin", "*")
+//                .header("Access-Control-Allow-Origin", "*")
+                .entity(jogador)
                 .build();
     }
 
@@ -75,8 +80,8 @@ public class JogadorResource {
     public Response atualizarJogador(
             @PathParam("id") int id,
             Jogador jogador) {
-        
-        service.merge(id,jogador);
+
+        service.merge(id, jogador);
         return Response.ok()
                 .entity(jogador)
                 .build();

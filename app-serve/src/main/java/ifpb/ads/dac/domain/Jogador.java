@@ -3,7 +3,9 @@ package ifpb.ads.dac.domain;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,10 +18,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.PROPERTY)
+@SequenceGenerator(name = "seg_jog", initialValue = 8, allocationSize = 1,sequenceName = "seg_jog")
 public class Jogador implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seg_jog")
     private int id;
     private String nome;
     private String foto; // usaremos um link...
